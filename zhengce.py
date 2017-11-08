@@ -64,3 +64,6 @@ Traceback (most recent call last):
     print matchObj.group()
 AttributeError: 'NoneType' object has no attribute 'group'
 >>> 
+>>>line = "Cats are smarter than dogs"
+>>>re.match(r'dogs',line,re.M|re.I)
+>>>
