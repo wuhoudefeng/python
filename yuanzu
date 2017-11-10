@@ -1,0 +1,32 @@
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> tup1 = ('physics', 'chemistry', 1997, 2000);
+>>> tup1[0]
+'physics'
+>>> tup1
+('physics', 'chemistry', 1997, 2000)
+>>> tup1.append='2002'
+
+Traceback (most recent call last):
+  File "<pyshell#3>", line 1, in <module>
+    tup1.append='2002'
+AttributeError: 'tuple' object has no attribute 'append'
+>>> tup2 = (1, 2, 3, 4, 5, 6, 7 );
+>>> tup2
+(1, 2, 3, 4, 5, 6, 7)
+>>> list_tup1.append='ok'
+
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    list_tup1.append='ok'
+NameError: name 'list_tup1' is not defined
+>>> list_tup1.append="ok"
+
+Traceback (most recent call last):
+  File "<pyshell#7>", line 1, in <module>
+    list_tup1.append="ok"
+NameError: name 'list_tup1' is not defined
+>>> tup3=tup1+tup2
+>>> tup3
+('physics', 'chemistry', 1997, 2000, 1, 2, 3, 4, 5, 6, 7)
+>>> 
