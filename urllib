@@ -13,3 +13,5 @@ Type "copyright", "credits" or "license()" for more information.
 >>> print response.geturl()
 http://passport.csdn.net/account/login?username=7298259%40qq.com&password=xin0507..
 >>> 
+>>>
+>>>
