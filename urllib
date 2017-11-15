@@ -2,29 +2,14 @@ Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (
 Type "copyright", "credits" or "license()" for more information.
 >>> import urllib
 >>> import urllib2
->>> values ={}
->>> values['username']="2662643959@qq.com"
->>> values['password']="1314520df"
+>>> values={}
+>>> values['username'] = "7298259@qq.com"
+>>> values['password']="xin0507.."
 >>> data = urllib.urlencode(values)
->>> url = "http://passport.csdn.net/accout/login"
->>> geturl = url+"?"+data
+>>> url = "http://passport.csdn.net/account/login"
+>>> geturl = url + "?"+data
 >>> request = urllib2.Request(geturl)
 >>> response = urllib2.urlopen(request)
-
-Traceback (most recent call last):
-  File "<pyshell#9>", line 1, in <module>
-    response = urllib2.urlopen(request)
-  File "C:\Python27\lib\urllib2.py", line 154, in urlopen
-    return opener.open(url, data, timeout)
-  File "C:\Python27\lib\urllib2.py", line 435, in open
-    response = meth(req, response)
-  File "C:\Python27\lib\urllib2.py", line 548, in http_response
-    'http', request, response, code, msg, hdrs)
-  File "C:\Python27\lib\urllib2.py", line 473, in error
-    return self._call_chain(*args)
-  File "C:\Python27\lib\urllib2.py", line 407, in _call_chain
-    result = func(*args)
-  File "C:\Python27\lib\urllib2.py", line 556, in http_error_default
-    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
-HTTPError: HTTP Error 404: Not Found
->>> print response.read()
+>>> print response.geturl()
+http://passport.csdn.net/account/login?username=7298259%40qq.com&password=xin0507..
+>>> 
