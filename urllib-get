@@ -3,15 +3,13 @@ Type "copyright", "credits" or "license()" for more information.
 >>> import urllib
 >>> import urllib2
 >>> values={}
->>> values['username'] = "7298259@qq.com"
->>> values['password']="xin0507.."
+>>> values['username'] = "3012522652@qq.com"
+>>> values['password']="13579df."
 >>> data = urllib.urlencode(values)
 >>> url = "http://passport.csdn.net/account/login"
 >>> geturl = url + "?"+data
 >>> request = urllib2.Request(geturl)
 >>> response = urllib2.urlopen(request)
 >>> print response.geturl()
-http://passport.csdn.net/account/login?username=7298259%40qq.com&password=xin0507..
+http://passport.csdn.net/account/login?username=3012522652%40qq.com&password=13579df.
 >>> 
->>>
->>>
