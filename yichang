@@ -1,0 +1,134 @@
+A
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+try:
+    fh = open("D:/4444/test/testfile.txt", "w")
+    fh.write("这是一个测试文件，用于测试异常!!")
+except IOError:
+    print "Error: 没有找到文件或读取文件失败"
+else:
+    print "内容写入文件成功"
+    fh.close()
+ 
+ 
+ B>>>
+ #!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+try:
+    fh = open("D:/4444/test/testfile2.txt", "w")
+    fh.write("这是一个测试文件，用于测试异常!!")
+except IOError,error:
+    print "Error: 没有找到文件或读取文件失败"
+    print error
+else:
+    print "内容写入文件成功"
+    fh.close()
+finally:
+    print "a,b,c,d,e"
+
+
+C
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+try:
+    fh = open("D:/4444/test/testfile1.txt", "w")
+    fh.write("这是一个测试文件，用于测试异常!!")
+finally:
+    print "Error: 没有找到文件或读取文件失败"
+
+
+
+D
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+try:
+    fh = open("D:/4444/test/testfile3.txt", "w")
+    try:
+        fh.write("这是一个测试文件，用于测试异常!!")
+    finally:
+        print "关闭文件"
+        fh.close()
+except IOError:
+    print "Error: 没有找到文件或读取文件失败"
+
+
+
+
+at last
+========================= RESTART: D:\4444\test\a.py =========================
+内容写入文件成功
+>>> 
+========================= RESTART: D:\4444\test\b.py =========================
+内容写入文件成功
+>>> 
+========================= RESTART: D:\4444\test\b.py =========================
+内容写入文件成功
+a,b,c,d,e
+>>> 
+========================= RESTART: D:\4444\test\c.py =========================
+Error: 没有找到文件或读取文件失败
+>>> 
+========================= RESTART: D:\4444\test\d.py =========================
+鍏抽棴鏂囦欢
+>>> 
+
+C
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+try:
+    fh = open("D:/4444/test111/testfile1.txt", "w")
+    fh.write("这是一个测试文件，用于测试异常!!")
+except IOError as error:
+    print "no such file"
+    print error.strerror
+
+finally:
+    print "Error: 没有找到文件或读取文件失败"
+========================= RESTART: D:\4444\test\c.py =========================
+no such file
+No such file or directory
+Error: 没有找到文件或读取文件失败
+>>> 
+
+
+F
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+# 定义函数
+def temp_convert(var):
+    try:
+        return int(var)
+    except ValueError, Argument:
+        print "参数没有包含数字\n", Argument
+
+# 调用函数
+temp_convert("xyz")
+========================= RESTART: D:/4444/test/f.py =========================
+鍙傛暟娌℃湁鍖呭惈鏁板瓧
+invalid literal for int() with base 10: 'xyz'
+>>> 
+
+G
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+try:
+    1 / 0
+except Exception as e:
+    '''异常的父类，可以捕获所有的异常'''
+    print "0不能被除"
+else:
+    '''保护不抛出异常的代码'''
+    print "没有异常"
+finally:
+    print "最后总是要执行我"
+========================= RESTART: D:/4444/test/g.py =========================
+0不能被除
+最后总是要执行我
+>>> 
